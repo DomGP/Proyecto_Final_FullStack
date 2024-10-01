@@ -23,6 +23,13 @@ footer{
   text-align: center;
 }
 
+.banner {
+    background-image: url("https://pbs.twimg.com/media/F8VXne9W4AI6UWw.jpg:large");
+    background-size: cover;
+    background-position: center;
+    position: static;
+}
+
 
 /* #root {
   max-width: 1280px;
