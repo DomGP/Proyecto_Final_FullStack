@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 //VIEWS
 import HomePage from "./views/HomePage";
 import RegisterPage from "./views/RegisterPage";
+import LoginPage from "./views/LoginPage";
 
 //CSS
 import "./App.css";
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />}/>
       </Routes>
       </div>
       <Footer />
