@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const RegisterForm = () => {
   return (
     <div>
-      <div className="container">
+      <div className="container my-5">
         <div className="row justify-content-center">
           <div className="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
             <div className="card border border-light-subtle rounded-4">
