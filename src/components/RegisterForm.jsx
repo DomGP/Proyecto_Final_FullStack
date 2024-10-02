@@ -42,7 +42,7 @@ const RegisterForm = () => {
                           required
                         />
                         <label for="firstName" className="form-label">
-                          First Name
+                          Nombre
                         </label>
                       </div>
                     </div>
@@ -57,7 +57,7 @@ const RegisterForm = () => {
                           required
                         />
                         <label for="lastName" className="form-label">
-                          Last Name
+                          Apellido
                         </label>
                       </div>
                     </div>
@@ -106,12 +106,12 @@ const RegisterForm = () => {
                           className="form-check-label text-secondary"
                           for="iAgree"
                         >
-                          I agree to the{" "}
+                          Acepto los{" "}
                           <a
                             href="#!"
                             className="link-primary text-decoration-none"
                           >
-                            terms and conditions
+                            terminos y condiciones
                           </a>
                         </label>
                       </div>
@@ -122,7 +122,7 @@ const RegisterForm = () => {
                           className="btn bsb-btn-xl btn-primary"
                           type="submit"
                         >
-                          Sign up
+                          Registrarse
                         </button>
                       </div>
                     </div>
@@ -132,16 +132,16 @@ const RegisterForm = () => {
                   <div className="col-12">
                     <hr className="mt-5 mb-4 border-secondary-subtle" />
                     <p className="m-0 text-secondary text-center">
-                      Already have an account?{" "}
+                      ¿Ya tienes una cuenta con nosotros?{" "}
                       <NavLink to="/login" className="link-primary text-decoration-none">
-                        Sign in
+                        Inicia sesión
                       </NavLink>
                     </p>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-12">
-                    <p className="mt-5 mb-5">Or continue with</p>
+                    <p className="mt-5 mb-5">O inicia sesión con</p>
                     <div className="d-flex gap-2 gap-sm-3 justify-content-center">
                       <a
                         href="#!"
