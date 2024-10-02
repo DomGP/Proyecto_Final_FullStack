@@ -12,7 +12,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <Navbar className="bg-body-tertiary justify-content-center">
+    <Navbar className="navbar_style text-white justify-content-center">
       <Container className="m-0">
         <Navbar.Brand href="/">Games Store</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
