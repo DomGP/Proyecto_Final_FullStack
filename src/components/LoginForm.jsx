@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
-const RegisterForm = () => {
+const LoginForm = () => {
   return (
     <div>
       <div className="container my-5">
@@ -22,45 +22,15 @@ const RegisterForm = () => {
                           />
                         </a>
                       </div>
-                      <h2 className="h4 text-center">Registrate con nosotros</h2>
+                      <h2 className="h4 text-center">Inicia sesión</h2>
                       <h3 className="fs-6 fw-normal text-secondary text-center m-0">
-                        Ingresa tu información!
+                        Ingresa tus datos!
                       </h3>
                     </div>
                   </div>
                 </div>
                 <form action="#!">
                   <div className="row gy-3 overflow-hidden">
-                    <div className="col-12">
-                      <div className="form-floating mb-3">
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="firstName"
-                          id="firstName"
-                          placeholder="First Name"
-                          required
-                        />
-                        <label for="firstName" className="form-label">
-                          First Name
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="form-floating mb-3">
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="lastName"
-                          id="lastName"
-                          placeholder="First Name"
-                          required
-                        />
-                        <label for="lastName" className="form-label">
-                          Last Name
-                        </label>
-                      </div>
-                    </div>
                     <div className="col-12">
                       <div className="form-floating mb-3">
                         <input
@@ -93,36 +63,12 @@ const RegisterForm = () => {
                       </div>
                     </div>
                     <div className="col-12">
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                          name="iAgree"
-                          id="iAgree"
-                          required
-                        />
-                        <label
-                          className="form-check-label text-secondary"
-                          for="iAgree"
-                        >
-                          I agree to the{" "}
-                          <a
-                            href="#!"
-                            className="link-primary text-decoration-none"
-                          >
-                            terms and conditions
-                          </a>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-12">
                       <div className="d-grid">
                         <button
                           className="btn bsb-btn-xl btn-primary"
                           type="submit"
                         >
-                          Sign up
+                          Iniciar sesión
                         </button>
                       </div>
                     </div>
@@ -131,17 +77,11 @@ const RegisterForm = () => {
                 <div className="row">
                   <div className="col-12">
                     <hr className="mt-5 mb-4 border-secondary-subtle" />
-                    <p className="m-0 text-secondary text-center">
-                      Already have an account?{" "}
-                      <NavLink to="/login" className="link-primary text-decoration-none">
-                        Sign in
-                      </NavLink>
-                    </p>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-12">
-                    <p className="mt-5 mb-5">Or continue with</p>
+                    <p className="mt-5 mb-5 text-center">O inicia sesión con:</p>
                     <div className="d-flex gap-2 gap-sm-3 justify-content-center">
                       <a
                         href="#!"
@@ -210,4 +150,4 @@ const RegisterForm = () => {
   )
 }
 
-export default RegisterForm
+export default LoginForm
