@@ -14,12 +14,12 @@ const RegisterForm = () => {
                     <div className="mb-5">
                       <div className="text-center mb-4">
                         <a href="#!">
-                          <img
+                          {/* <img
                             src="./assets/img/bsb-logo.svg"
                             alt="BootstrapBrain Logo"
                             width="175"
                             height="57"
-                          />
+                          /> */}
                         </a>
                       </div>
                       <h2 className="h4 text-center">Registration</h2>
