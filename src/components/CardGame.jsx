@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Importa Link de react-router-dom
+import { Link } from "react-router-dom";
 
 const CardGame = ({ showDetails = true }) => {
   const [productos, setProductos] = useState([]);
@@ -20,13 +20,13 @@ const CardGame = ({ showDetails = true }) => {
         {productos.map((producto) => (
           <Col xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center mb-4" key={producto.id}>
             <Card style={{ width: "18rem" }}>
-              <Link to={`/products/${producto.id}`}> {/* Enlaza a la ruta de detalles del producto */}
+              <Link to={`/products/${producto.id}`}>
                 <Card.Img 
                   variant="top" 
                   src={producto.img_url} 
                   alt={producto.nombre} 
                   className="img-fluid"
-                  style={{ height: "300px", objectFit: "cover" }} // Cambié a "cover" para mejor ajuste
+                  style={{ height: "300px", objectFit: "cover" }}
                 />
               </Link>
               {showDetails && (
