@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 // Importa el componente para usar íconos
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Importa el ícono específico que necesitas
-import { faCartShopping, faUser, faUserPlus, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faUser, faUserPlus, faHouse, faGamepad } from '@fortawesome/free-solid-svg-icons';
 
 import React from 'react'
 
@@ -19,6 +19,8 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/"><FontAwesomeIcon icon={faHouse} /></Nav.Link>
+            <Nav.Link href="/products"><FontAwesomeIcon icon={faGamepad} /></Nav.Link>
+
             
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
