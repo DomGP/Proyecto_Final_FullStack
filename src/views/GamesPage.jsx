@@ -1,8 +1,11 @@
 import React from 'react'
+import CardGame from '../components/CardGame'
 
 const GamesPage = () => {
   return (
-    <div>GamesPage</div>
+<>
+<CardGame showDetails={false}/>
+</>
   )
 }
 

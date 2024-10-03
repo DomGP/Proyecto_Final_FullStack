@@ -14,6 +14,7 @@ import ComodinPage from "./views/ComodinPage";
 
 //CSS
 import "./App.css";
+import GamesPage from "./views/GamesPage";
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/cart" element={<CartPage/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
         <Route path="/*" element={<ComodinPage/>} />
+        <Route path="/products" element={<GamesPage/>}/>
       </Routes>
       </div>
       <Footer />

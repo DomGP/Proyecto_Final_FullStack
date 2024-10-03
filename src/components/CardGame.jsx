@@ -1,21 +1,35 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import React, { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
-const CardGame = () => {
-    return (
-        <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-        </Card>
-    )
-}
+const CardGame = ({ showDetails = true }) => {
+  const [productos, setProductos] = useState([]);
 
-export default CardGame
+  useEffect(() => {
+    fetch("/productos.json")
+      .then((response) => response.json())
+      .then((data) => setProductos(data))
+      .catch((error) => console.error("Error al obtener productos:", error));
+  }, []);
+
+  return (
+    <div className="row">
+      {productos.map((producto) => (
+        <div className="col-md-4" key={producto.id}>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={producto.img_url} alt={producto.nombre} />
+            {showDetails && (
+              <Card.Body>
+                <Card.Title>{producto.nombre}</Card.Title>
+                <Card.Text>{producto.descripcion}</Card.Text>
+                <Button variant="primary">Comprar por ${producto.precio}</Button>
+              </Card.Body>
+            )}
+          </Card>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default CardGame;
