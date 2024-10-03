@@ -16,7 +16,7 @@ const CardGame = ({ showDetails = true }) => {
 
   return (
     <Container>
-      <Row className="justify-content-center">
+      <Row className="justify-content-center mt-5">
         {productos.map((producto) => (
           <Col xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center mb-4" key={producto.id}>
             <Card style={{ width: "18rem" }}>

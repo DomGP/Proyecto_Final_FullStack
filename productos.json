@@ -25,6 +25,15 @@
       "categoria": "Shooter",
       "precio": 29990,
       "plataforma": "Xbox X/S Series"
+    },
+    {
+"id": 4,
+      "nombre": "Pokemon Legends Arceus",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/82795-1.jpg",
+      "descripcion": "Pokémon Legends: Arceus es un juego de rol de acción desarrollado por Game Freak y lanzado para Nintendo Switch. Ambientado en la región de Hisui, una versión antigua de Sinnoh, los jugadores asumen el papel de un investigador que debe completar la primera Pokédex del mundo. El juego combina la exploración de un mundo abierto con combates en tiempo real y una jugabilidad innovadora que permite atrapar Pokémon de diversas maneras. Con un enfoque en la historia y la mitología de Arceus, el título ofrece una experiencia fresca y única para los fanáticos de la franquicia Pokémon.",
+      "categoria": "Aventura",
+      "precio": 39990,
+      "plataforma": "Nintendo Switch"
     }
   ]
   
