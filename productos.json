@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "nombre": "God of War",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/73778-1.jpg",
+      "descripcion": "God of War (2018) es un juego de acción y aventura que reinventa la clásica saga. Ambientado en la mitología nórdica, sigue a Kratos, el dios de la guerra, y su hijo Atreus en un viaje emocional y épico tras la muerte de la madre del niño. A medida que exploran tierras peligrosas, enfrentan criaturas mitológicas y poderosos dioses. Kratos debe lidiar con su oscuro pasado mientras enseña a Atreus sobre la vida y la lucha. Con un combate visceral, gráficos impresionantes y una narrativa profunda, God of War ofrece una experiencia inmersiva y cautivadora.",
+      "categoria": "Acción",
+      "precio": 14990,
+      "plataforma": "PlayStation 4"
+    },
+    {
+      "id": 2,
+      "nombre": "Super Mario 3D Collection",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/119334-1.jpg",
+      "descripcion": "Super Mario 3D All-Stars es una colección para Nintendo Switch que incluye tres icónicos juegos de plataformas en 3D: Super Mario 64, Super Mario Sunshine, y Super Mario Galaxy. Lanzada para celebrar el 35º aniversario de Super Mario, esta recopilación remasteriza los gráficos para adaptarse a la alta definición, manteniendo la jugabilidad clásica que hizo a cada título legendario. Los jugadores pueden disfrutar de la nostalgia de los originales con controles mejorados, mientras exploran mundos llenos de desafíos, secretos y diversión. Es un tributo a la evolución de Super Mario y una experiencia imperdible para los fans.",
+      "categoria": "Aventuras",
+      "precio": 59990,
+      "plataforma": "Nintendo Switch"
+    },
+    {
+      "id": 3,
+      "nombre": "Halo Infinite",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/121175-1.jpg",
+      "descripcion": "Halo Infinite es un juego de disparos en primera persona desarrollado por 343 Industries y publicado por Xbox Game Studios. La historia continúa las aventuras del icónico Jefe Maestro, quien enfrenta a un nuevo enemigo conocido como los Desterrados, en un vasto mundo abierto que introduce más libertad para la exploración y combate estratégico. Con su innovadora jugabilidad, nuevas armas, vehículos y su clásico multijugador competitivo, Halo Infinite moderniza la saga sin perder su esencia. Su modo de campaña expansivo y el regreso del multijugador gratuito consolidan este título como un pilar clave en la serie de Halo.",
+      "categoria": "Shooter",
+      "precio": 29990,
+      "plataforma": "Xbox X/S Series"
+    }
+  ]
+  
