@@ -18,7 +18,6 @@ const HomePage = () => {
         <Banner />
       </div>
       <div className="cardGame">
-        {/* Pasamos los productos al carrusel */}
         <Carousel productos={productos} />
       </div>
     </div>
