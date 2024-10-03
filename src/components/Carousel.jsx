@@ -7,7 +7,9 @@ const GameCarousel = ({ productos }) => {
     <Carousel>
       {productos.map((producto) => (
         <Carousel.Item key={producto.id}>
-          <CardGame showDetails={false} producto={producto} />
+          <div className="d-flex justify-content-center">
+            <CardGame showDetails={false} productos={[producto]} />
+          </div>
         </Carousel.Item>
       ))}
     </Carousel>

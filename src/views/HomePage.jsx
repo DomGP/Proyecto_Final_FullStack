@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
-
+import { GameContext } from "../context/GameContext";
 const HomePage = () => {
-  const [productos, setProductos] = useState([]);
-
-  useEffect(() => {
-    fetch("/productos.json")
-      .then((response) => response.json())
-      .then((data) => setProductos(data))
-      .catch((error) => console.error("Error al obtener productos:", error));
-  }, []);
+  const { games } = useContext(GameContext);
 
   return (
     <div>
@@ -18,7 +11,7 @@ const HomePage = () => {
         <Banner />
       </div>
       <div className="cardGame">
-        <Carousel productos={productos} />
+        <Carousel productos={games} />
       </div>
     </div>
   );
