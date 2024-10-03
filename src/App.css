@@ -37,6 +37,9 @@ footer{
     background-position: center;
     position: static;
 }
+.cardGame{
+  margin: 1em;
+}
 
 .not-found-container {
   text-align: center;
