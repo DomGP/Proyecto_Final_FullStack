@@ -5,7 +5,7 @@ import { GameContext } from '../context/GameContext';
 import { Link } from 'react-router-dom';
 import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faUser, faUserPlus, faHouse, faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faUser, faUserPlus, faHouse, faGamepad, faUserCheck } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const { carrito } = useContext(GameContext); // Obtener el carrito del contexto
@@ -23,6 +23,7 @@ const NavBar = () => {
           </Nav>
           <Nav>
             <Nav.Link as={Link} to="/signup"><FontAwesomeIcon icon={faUserPlus} /></Nav.Link>
+            <Nav.Link as={Link} to="login"><FontAwesomeIcon icon={faUserCheck}/></Nav.Link>
             <Nav.Link as={Link} to="/profile"><FontAwesomeIcon icon={faUser} /></Nav.Link>
             <Nav.Link as={Link} to="/cart"><FontAwesomeIcon icon={faCartShopping} />
               <span>{totalItems} </span>
