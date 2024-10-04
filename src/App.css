@@ -41,6 +41,11 @@ footer{
   margin: 1em;
 }
 
+.button_cards{
+  display: flex;
+  justify-content: space-between;
+}
+
 .not-found-container {
   text-align: center;
   padding: 50px;

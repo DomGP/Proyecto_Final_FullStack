@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
 
 const CardGame = ({ showDetails = true, productos = [] }) => {
-  const { games } = useContext(GameContext);
+  const { games, addToCart } = useContext(GameContext);
   const itemsAVisualizar = productos.length > 0 ? productos : games;
+  
 
   return (
     <Container>
@@ -21,7 +22,7 @@ const CardGame = ({ showDetails = true, productos = [] }) => {
             className="d-flex justify-content-center mb-4"
             key={producto.id}
           >
-            <Card style={{ width: "18rem" }}>
+            <Card style={{  }}>
               <Link to={`/products/${producto.id}`}>
                 <Card.Img
                   variant="top"
@@ -35,7 +36,21 @@ const CardGame = ({ showDetails = true, productos = [] }) => {
                 <Card.Body>
                   <Card.Title>{producto.nombre}</Card.Title>
                   <Card.Text>{producto.descripcion}</Card.Text>
-                  <Button variant="primary">Comprar por ${producto.precio}</Button>
+                  <Card.Text>Precio: ${producto.precio.toLocaleString("de-DE")}</Card.Text>
+                    <div className="button_cards">
+                      <Button variant="primary"
+                        onClick={() => addToCart(producto)}>Agregar al carro</Button>
+                      <Button variant='primary'>
+                        <Link to="/products" style={{ color: 'white', textDecoration: 'none' }}>
+                          Volver
+                        </Link>
+                      </Button>
+                      {/* <Button variant='primary'>
+                        <Link to="/cart" style={{ color: 'white', textDecoration: 'none' }}>
+                          Ir al carrito
+                        </Link>
+                      </Button> */}
+                    </div>
                 </Card.Body>
               )}
             </Card>
