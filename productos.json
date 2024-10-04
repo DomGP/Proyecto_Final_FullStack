@@ -34,6 +34,24 @@
       "categoria": "Aventura",
       "precio": 39990,
       "plataforma": "Nintendo Switch"
+    },
+    {
+      "id": 5,
+      "nombre": "Gran Turismo 7 25th Anniversary Edition",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/98293-1.jpg",
+      "descripcion": "Gran Turismo 7 Edición del 25 Aniversario celebra la historia de la emblemática serie de simuladores de carreras. Exclusiva para PlayStation 5 y PlayStation 4, esta edición incluye el juego base, una caja metálica de coleccionista y bonificaciones digitales, como créditos, autos exclusivos y avatares. Gran Turismo 7 ofrece gráficos realistas, modos de juego mejorados y una amplia gama de vehículos y pistas icónicas. Los jugadores pueden disfrutar del modo campaña, personalizar sus autos y competir online. La edición especial es ideal para los fanáticos de la saga, brindando una experiencia de conducción envolvente y llena de detalles.",
+      "categoria": "Carreras",
+      "precio": 29990,
+      "plataforma": "PlayStation 5"
+    },
+    {
+      "id": 6,
+      "nombre": "Super Mario Odyssey",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/42320-1.jpg",
+      "descripcion": "Super Mario Odyssey es un juego de plataformas 3D de Nintendo para la consola Switch. En esta aventura, Mario explora vastos reinos mientras intenta rescatar a la Princesa Peach del malvado Bowser, quien planea un matrimonio forzado. Mario cuenta con la ayuda de Cappy, un sombrero mágico que le permite poseer y controlar enemigos y objetos. Con escenarios variados y llenos de secretos, el juego invita a los jugadores a recolectar Power Moons para avanzar y desbloquear nuevos niveles. Super Mario Odyssey es aclamado por su creatividad, libertad de exploración y su encantadora mezcla de nostalgia y novedades.",
+      "categoria": "Aventura",
+      "precio": 59990,
+      "plataforma":"Nintendo Switch"
     }
   ]
   
