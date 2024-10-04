@@ -1,4 +1,6 @@
 import { createContext, useContext, useState } from "react";
+import { useGame } from "./GameContext";
+
 
 const UserContext = createContext();
 
@@ -7,6 +9,8 @@ export const UserProvider = ({ children }) => {
     const token = localStorage.getItem("userToken");
     return { token: token ? token : null };
   });
+
+const {setCarrito} = useGame()
 
   const login = (email, password) => {
     if (email === "mail@mail.com" && password === "123456") {
@@ -21,6 +25,7 @@ export const UserProvider = ({ children }) => {
   const logout = () => {
     setUser({ token: null });
     localStorage.removeItem("userToken");
+    setCarrito([]);
   };
 
   return (
