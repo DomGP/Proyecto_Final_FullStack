@@ -83,7 +83,6 @@ const RegisterForm = () => {
                           className="form-control"
                           name="password"
                           id="password"
-                          value=""
                           placeholder="Password"
                           required
                         />
