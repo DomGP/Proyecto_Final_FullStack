@@ -17,6 +17,8 @@ import ComodinPage from "./views/ComodinPage";
 import "./App.css";
 import GamesPage from "./views/GamesPage";
 import DetailPage from "./views/DetailPage";
+import CheckoutPage from "./views/CheckOutPage";
+import ConfirmationPage from "./views/ConfirmationPage";
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
             <Route path="/products" element={<GamesPage />} />
             <Route path="/*" element={<ComodinPage />} />
             <Route path="/Products/:id" element={<DetailPage />} />
+            <Route path="/checkout" element={<CheckoutPage/>}/>
+            <Route path="/confirmation" element={<ConfirmationPage/>}/>
           </Routes>
         </div>
         <Footer />

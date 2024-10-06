@@ -1,12 +1,22 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import React from 'react';
 import { GameContext } from '../context/GameContext';
-import { Button, Image, Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Image, Container, Row, Col, Alert } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
   const { carrito, increment, decrement } = useContext(GameContext);
   const total = carrito.reduce((a, producto) => a + producto.precio * producto.count, 0);
+  const navigate = useNavigate();
+  const [showAlert, setShowAlert] = useState(false); // Estado para manejar la alerta
+
+  const handleCheckout = () => {
+    if (carrito.length === 0) {
+      setShowAlert(true); // Muestra la alerta si el carrito está vacío
+    } else {
+      navigate('/checkout'); // Redirige a la vista de pago
+    }
+  };
 
   return (
     <Container className='container_detalle mt-5'>
@@ -28,16 +38,12 @@ const CartPage = () => {
                   </div>
                 </Col>
 
-                {/* Ajustamos la columna para alinear precio y botones en la misma fila */}
                 <Col className="second_style d-flex align-items-center justify-content-center" xs={12} md={4}>
-                  {/* Alineamos todo horizontalmente con flexbox */}
                   <div className="d-flex align-items-center">
-                    {/* Precio alineado */}
                     <div className="me-4" style={{ fontWeight: 'bold' }}>
                       ${(producto.precio * producto.count).toLocaleString("de-DE")}
                     </div>
 
-                    {/* Botones para incrementar y decrementar */}
                     <Button 
                       variant='danger' 
                       className="mx-2 btn-sm" 
@@ -66,11 +72,27 @@ const CartPage = () => {
           <div style={{ marginTop: '20px', fontSize: '20px', fontWeight: 'bold' }}>
             Total: ${(total.toLocaleString("de-DE"))}
           </div>
-          <Button variant='primary' className="mt-3">
-            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
+
+          {/* Contenedor flexible para alinear botones */}
+          <div className="d-flex justify-content-between mt-3">
+            <Button 
+              variant='primary' 
+              onClick={handleCheckout} // Redirige al pago
+            >
               Ir a Pagar
+            </Button>
+
+            <Link to="/products" style={{ textDecoration: 'none' }}>
+              <Button variant='secondary'>
+                Regresar a Productos
+              </Button>
             </Link>
-          </Button>
+          </div>
+          {showAlert && (
+            <Alert className='mt-2' variant='danger' onClose={() => setShowAlert(false)} dismissible>
+              No hay productos en el carrito. ¡Agrega algunos para continuar con el pago!
+            </Alert>
+          )}
         </div>
       </Row>
     </Container>
