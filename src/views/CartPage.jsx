@@ -28,19 +28,34 @@ const CartPage = () => {
                   </div>
                 </Col>
 
-                <Col className="second_style text-center" xs={12} md={4}>
-                  <div style={{ marginTop: '20px' }}>
-                    ${(producto.precio * producto.count).toLocaleString("de-DE")}
+                {/* Ajustamos la columna para alinear precio y botones en la misma fila */}
+                <Col className="second_style d-flex align-items-center justify-content-center" xs={12} md={4}>
+                  {/* Alineamos todo horizontalmente con flexbox */}
+                  <div className="d-flex align-items-center">
+                    {/* Precio alineado */}
+                    <div className="me-4" style={{ fontWeight: 'bold' }}>
+                      ${(producto.precio * producto.count).toLocaleString("de-DE")}
+                    </div>
+
+                    {/* Botones para incrementar y decrementar */}
+                    <Button 
+                      variant='danger' 
+                      className="mx-2 btn-sm" 
+                      onClick={() => decrement(i)}
+                    >
+                      -
+                    </Button>
+                    <span style={{ fontWeight: 'bold', margin: '0 10px' }}>
+                      {producto.count}
+                    </span>
+                    <Button 
+                      variant='primary' 
+                      className="mx-2 btn-sm" 
+                      onClick={() => increment(i)}
+                    >
+                      +
+                    </Button>
                   </div>
-                  <Button variant='danger' className="mx-2" onClick={() => decrement(i)}>
-                    -
-                  </Button>
-                  <span style={{ fontWeight: 'bold' }}>
-                    {producto.count}
-                  </span>
-                  <Button variant='primary' className="mx-2" onClick={() => increment(i)}>
-                    +
-                  </Button>
                 </Col>
               </Row>
             ))
@@ -63,4 +78,5 @@ const CartPage = () => {
 }
 
 export default CartPage;
+
 
