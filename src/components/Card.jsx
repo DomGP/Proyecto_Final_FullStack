@@ -14,8 +14,8 @@ const HorizontalCard = ({ showDetails = true, productos = [] }) => {
       <Row className="justify-content-center mt-5">
         {itemsAVisualizar.map((producto) => (
           <Col xs={12} className="d-flex justify-content-center mb-4" key={producto.id}>
-            <Card className="d-flex flex-row" style={{ width: '80vw', height: '300px' }}>
-              <div style={{ flex: '0 0 20%', height: '100%' }}>
+            <Card className="d-flex flex-row" style={{ width: '90vw', maxWidth: '1000px', height: 'auto' }}>
+              <div style={{ flex: '0 0 30%', height: '100%' }}>
                 <Link to={`/products/${producto.id}`}>
                   <Card.Img
                     src={producto.img_url}
@@ -25,7 +25,7 @@ const HorizontalCard = ({ showDetails = true, productos = [] }) => {
                 </Link>
               </div>
               {showDetails && (
-                <Card.Body className="d-flex flex-column justify-content-between" style={{ width: '80%' }}>
+                <Card.Body className="d-flex flex-column justify-content-between p-3" style={{ width: '70%' }}>
                   <div>
                     <Card.Title>{producto.nombre}</Card.Title>
                     <Card.Text>{producto.descripcion}</Card.Text>
