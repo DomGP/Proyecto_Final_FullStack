@@ -36,6 +36,13 @@ footer{
     background-size: cover;
     background-position: center;
     position: static;
+    margin-bottom: 8em;
+}
+.banner_style{
+  background-color: rgba(156, 174, 250, 0.75);
+  margin-left: 20em;
+  margin-right: 20em;
+  border-radius: 20px;
 }
 .cardGame{
   margin: 1em;
