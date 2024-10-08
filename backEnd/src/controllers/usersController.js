@@ -14,3 +14,12 @@ exports.createUser = async (req, res) => {
         res.status(500).json({message: error.message})
     }
 }
+
+exports.getAllusers = async (req, res) => {
+    try {
+        const users = await usersModel.getAllUsers();
+        res.status(200).json(users);
+      } catch (error) {
+        res.status(500).json({ message: error.message });
+      }
+}
