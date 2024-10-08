@@ -15,12 +15,12 @@ const getAllUsers = async () => {
   }
 };
 
-const createUser = async (nombre, apellido, email, contraseña) => {
+const createUser = async (nombre, apellido, email, password) => {
   const saltRounds = 10;
 
-  const hashedPassword = await bcrypt.hash(contraseña, saltRounds);
+  const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-  const consulta = `INSERT INTO usuarios (nombre, apellido, email, contraseña) VALUES ($1, $2, $3, $4) RETURNING *`;
+  const consulta = `INSERT INTO usuarios (nombre, apellido, email, password) VALUES ($1, $2, $3, $4) RETURNING *`;
 
   const values = [nombre, apellido, email, hashedPassword];
 

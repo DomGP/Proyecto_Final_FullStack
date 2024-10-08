@@ -1,14 +1,14 @@
 const usersModel = require('../models/usersModel');
 
 exports.createUser = async (req, res) => {
-    const {nombre, apellido, email, contraseña} = req.body;
+    const {nombre, apellido, email, password} = req.body;
 
-    if (!nombre || !apellido || !email || !contraseña) {
+    if (!nombre || !apellido || !email || !password) {
         return res.status(400).json({message:'Todos los campos son requeridos'})
     }
 
     try {
-        const nuevoUser = await usersModel.createUser(nombre, apellido, email, contraseña);
+        const nuevoUser = await usersModel.createUser(nombre, apellido, email, password);
         res.status(201).json(nuevoUser)
     } catch (error) {
         res.status(500).json({message: error.message})
