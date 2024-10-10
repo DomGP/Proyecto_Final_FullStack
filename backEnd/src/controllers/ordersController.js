@@ -14,12 +14,12 @@ exports.createOrder = async (req, res) => {
 };
 
 exports.addOrderDetail = async (req, res) => {
-    const {order_id, productos} = req.body
+  const { order_id, productos } = req.body;
 
-    try {
-        const result = await ordersModel.addOrderDetail(order_id, productos);
-        res.status(200).json(result)
-    } catch (error) {
-        res.status(500).json({message: error.message})
-    }
-}
+  try {
+    const result = await ordersModel.addOrderDetail(order_id, productos);
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
