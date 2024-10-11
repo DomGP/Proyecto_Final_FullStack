@@ -27,7 +27,8 @@ const HorizontalCard = ({ showDetails = true, productos = [] }) => {
               {showDetails && (
                 <Card.Body className="d-flex flex-column justify-content-between p-3" style={{ width: '70%' }}>
                   <div>
-                    <Card.Title>{producto.nombre}</Card.Title>
+                    <Card.Title><strong>{producto.nombre}</strong></Card.Title>
+                    <Card.Text><small>{producto.categoria}</small></Card.Text>
                     <Card.Text>{producto.descripcion}</Card.Text>
                     <Card.Text>Precio: ${producto.precio.toLocaleString("de-DE")}</Card.Text>
                   </div>

@@ -13,7 +13,7 @@
       "nombre": "Super Mario 3D Collection",
       "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/119334-1.jpg",
       "descripcion": "Super Mario 3D All-Stars es una colección para Nintendo Switch que incluye tres icónicos juegos de plataformas en 3D: Super Mario 64, Super Mario Sunshine, y Super Mario Galaxy. Lanzada para celebrar el 35º aniversario de Super Mario, esta recopilación remasteriza los gráficos para adaptarse a la alta definición, manteniendo la jugabilidad clásica que hizo a cada título legendario. Los jugadores pueden disfrutar de la nostalgia de los originales con controles mejorados, mientras exploran mundos llenos de desafíos, secretos y diversión. Es un tributo a la evolución de Super Mario y una experiencia imperdible para los fans.",
-      "categoria": "Aventuras",
+      "categoria": "Aventura",
       "precio": 59990,
       "plataforma": "Nintendo Switch"
     },
@@ -52,6 +52,33 @@
       "categoria": "Aventura",
       "precio": 59990,
       "plataforma":"Nintendo Switch"
+    },
+    {
+      "id": 7,
+      "nombre": "The Legend of Zelda: Tears of the Kingdom",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/104362-1.jpg",
+      "descripcion": "The Legend of Zelda: Tears of the Kingdom es una épica aventura de mundo abierto desarrollada por Nintendo. Secuela de Breath of the Wild, presenta un vasto reino de Hyrule con islas flotantes, donde los jugadores acompañan a Link en su misión de salvar al reino una vez más. El juego introduce nuevas mecánicas, como la habilidad de fusionar objetos y la manipulación del tiempo. Con una narrativa profunda, innovadoras herramientas de exploración y un mundo inmersivo, Tears of the Kingdom redefine la experiencia de los juegos de aventura y exploración.",
+      "categoria": "Aventura",
+      "precio": 59990,
+      "plataforma":"Nintendo Switch"
+    },
+    {
+      "id": 8,
+      "nombre": "Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/88934-1.jpg",
+      "descripcion": "Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles es un juego de acción y lucha basado en el popular anime Demon Slayer. Desarrollado por CyberConnect2, sigue la historia de Tanjiro Kamado, quien se convierte en cazador de demonios para salvar a su hermana Nezuko y vengar a su familia. Los jugadores reviven los momentos clave del anime en combates espectaculares, enfrentando a poderosos demonios con un estilo visual fiel a la serie. El juego cuenta con un modo historia y batallas multijugador, donde se pueden controlar a personajes icónicos con movimientos y habilidades especiales. Es una experiencia inmersiva y visualmente impresionante para los fans del anime.",
+      "categoria": "Peleas",
+      "precio": 39990,
+      "plataforma":"PlayStation 4"
+    },
+    {
+      "id": 9,
+      "nombre": "Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles",
+      "img_url": "https://cdn.thegamesdb.net/images/thumb/boxart/front/88931-1.jpg",
+      "descripcion": "Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles es un juego de acción y lucha basado en el popular anime Demon Slayer. Desarrollado por CyberConnect2, sigue la historia de Tanjiro Kamado, quien se convierte en cazador de demonios para salvar a su hermana Nezuko y vengar a su familia. Los jugadores reviven los momentos clave del anime en combates espectaculares, enfrentando a poderosos demonios con un estilo visual fiel a la serie. El juego cuenta con un modo historia y batallas multijugador, donde se pueden controlar a personajes icónicos con movimientos y habilidades especiales. Es una experiencia inmersiva y visualmente impresionante para los fans del anime.",
+      "categoria": "Peleas",
+      "precio": 39990,
+      "plataforma":"PlayStation 5"
     }
   ]
   
