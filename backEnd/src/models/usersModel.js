@@ -32,7 +32,18 @@ const createUser = async (nombre, apellido, email, password) => {
   }
 };
 
+const getUserByEmail = async (email) => {
+  try {
+    const result = await pool.query("SELECT * FROM usuarios WHERE email = $1", [email]);
+    return result.rows[0];
+  } catch (error) {
+    console.error("Error al obtener usuario por email:", error);
+    throw error;
+  }
+};
+
 module.exports = {
   createUser,
   getAllUsers,
+  getUserByEmail
 };

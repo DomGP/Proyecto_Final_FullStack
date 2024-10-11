@@ -23,3 +23,32 @@ exports.getAllusers = async (req, res) => {
         res.status(500).json({ message: error.message });
       }
 }
+
+exports.loginUser = async (req, res) => {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({ message: "Email y contraseña son requeridos" });
+    }
+    try {
+        const user = await usersModel.getUserByEmail(email);
+        
+        if (!user) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+
+        const passwordMatch = await bcrypt.compare(password, user.password);
+        
+        if (!passwordMatch) {
+            return res.status(401).json({ message: "Contraseña incorrecta" });
+        }
+        
+        const token = jwt.sign({ userId: user.id, email: user.email }, process.env.JWT_SECRET, {
+            expiresIn: "1h",
+        });
+
+        res.status(200).json({ token });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
