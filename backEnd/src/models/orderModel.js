@@ -39,8 +39,19 @@ const addOrderDetail = async (order_id, productos) => {
 };
 
 const getOrderById = async (order_id) => {
-  const consulta = `SELECT o.id AS order_id, o.user_id, o.fecha, o.estado, d.product_id, p.nombre AS product_name, d.cantidad, 
-  p.precio FROM ordenes o JOIN  detalle_orden d ON o.id = d.order_id JOIN productos p ON d.product_id = p.id WHERE o.id = $1;`;
+  const consulta = `SELECT 
+  o.id AS order_id, 
+  o.user_id, 
+  o.fecha, 
+  o.estado, 
+  d.product_id, 
+  p.nombre AS product_name, 
+  d.cantidad, 
+  p.precio 
+  FROM ordenes o 
+  JOIN  detalle_orden d ON o.id = d.order_id 
+  JOIN productos p ON d.product_id = p.id 
+  WHERE o.id = $1;`;
   const values = [order_id];
 
   try {

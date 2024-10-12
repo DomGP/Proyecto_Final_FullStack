@@ -1,12 +1,13 @@
-const express = require('express')
-const ordersController = require('../controllers/ordersController')
+const express = require("express");
+const ordersController = require("../controllers/ordersController");
+const authMiddleware = require("../Middleware/authMiddleware");
 
-const router = express.Router()
+const router = express.Router();
 
-router.post('/create', ordersController.createOrder)
+router.post("/create", authMiddleware, ordersController.createOrder);
 
-router.post('/agregar', ordersController.addOrderDetail)
+router.post("/agregar", authMiddleware, ordersController.addOrderDetail);
 
-router.get('/getorder', ordersController.getOrderById)
+router.get("/getorder", authMiddleware, ordersController.getOrderById);
 
-module.exports = router
+module.exports = router;
