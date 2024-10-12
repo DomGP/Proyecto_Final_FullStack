@@ -7,4 +7,6 @@ router.post('/create', ordersController.createOrder)
 
 router.post('/agregar', ordersController.addOrderDetail)
 
+router.get('/getorder', ordersController.getOrderById)
+
 module.exports = router
