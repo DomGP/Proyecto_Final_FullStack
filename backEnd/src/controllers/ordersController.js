@@ -35,7 +35,9 @@ exports.getOrderById = async (req, res)=> {
   try {
 
     const order = await ordersModel.getOrderById(order_id)
-    
+    if (order.user_id !== req.user.userId) {
+      return res.status(403).json({message: 'No autorizado para ver esta orden'})
+    }
 
     res.status(200).json(order);
   } catch (error) {
