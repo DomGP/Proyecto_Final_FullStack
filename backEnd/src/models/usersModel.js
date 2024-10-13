@@ -42,8 +42,21 @@ const getUserByEmail = async (email) => {
   }
 };
 
+const deleteUserById = async (userId) => {
+  const query = 'DELETE FROM usuarios WHERE id = $1';
+  
+  try {
+      const res = await pool.query(query, [userId]);
+      return res.rowCount;
+  } catch (error) {
+      console.error('Error al eliminar el usuario:', error);
+      throw error; 
+  }
+};
+
 module.exports = {
   createUser,
   getAllUsers,
-  getUserByEmail
+  getUserByEmail,
+  deleteUserById
 };

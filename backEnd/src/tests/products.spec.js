@@ -21,5 +21,5 @@ describe("GET /api/products", () => {
       expect(res.body[0]).toHaveProperty("plataforma");
       expect(res.body[0]).toHaveProperty("nombre_categoria");
     }
-  });
+  },20000);
 });

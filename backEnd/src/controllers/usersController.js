@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const usersModel = require("../models/usersModel");
 
+
 exports.createUser = async (req, res) => {
   const { nombre, apellido, email, password } = req.body;
 
@@ -66,3 +67,23 @@ exports.loginUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.deleteUserById = async (req, res) => {
+  const userId = parseInt(req.params.id);
+    console.log(`Intentando eliminar el usuario con ID: ${userId}`); // Depuración
+    
+    try {
+        const deletedCount = await usersModel.deleteUserById(userId);
+        console.log(`Número de usuarios eliminados: ${deletedCount}`); // Depuración
+        if (deletedCount > 0) {
+            res.status(204).send(); // No content
+        } else {
+            res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+    } catch (error) {
+        console.error('Error al eliminar el usuario:', error); // Depuración
+        res.status(500).json({ message: 'Error al eliminar el usuario' });
+    }
+};
+
+  

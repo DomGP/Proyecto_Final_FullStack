@@ -10,4 +10,7 @@ router.post("/agregar", authMiddleware, ordersController.addOrderDetail);
 
 router.get("/getorder", authMiddleware, ordersController.getOrderById);
 
+router.get("/getorders", authMiddleware, ordersController.getAllOrders);
+
+
 module.exports = router;

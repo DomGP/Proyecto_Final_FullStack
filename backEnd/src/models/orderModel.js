@@ -1,7 +1,7 @@
 const pool = require("../config/db");
 
 const createOrder = async (user_id) => {
-  const fecha = date();
+  const fecha = new Date();
   const estado = "pendiente";
 
   const consulta = `INSERT INTO ordenes (user_id, fecha, estado) VALUES ($1, $2, $3) RETURNING *`;
@@ -81,8 +81,26 @@ const getOrderById = async (order_id) => {
   }
 };
 
+const getAllOrders = async () => {
+  const consulta = `SELECT 
+    o.id AS order_id, 
+    o.user_id, 
+    o.fecha, 
+    o.estado 
+    FROM ordenes o;`;
+  
+  try {
+    const result = await pool.query(consulta);
+    return result.rows;
+  } catch (error) {
+    console.error("Error al obtener todas las órdenes:", error);
+    throw new Error("Error al consultar las órdenes");
+  }
+};
+
 module.exports = {
   createOrder,
   addOrderDetail,
   getOrderById,
+  getAllOrders,
 };
