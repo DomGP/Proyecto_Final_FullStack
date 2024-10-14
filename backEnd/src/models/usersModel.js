@@ -22,7 +22,7 @@ const createUser = async (nombre, apellido, email, password) => {
 
   const consulta = `INSERT INTO usuarios (nombre, apellido, email, password) VALUES ($1, $2, $3, $4) RETURNING *`;
 
-  const values = [nombre, apellido, email, hashedPassword, rol];
+  const values = [nombre, apellido, email, hashedPassword];
 
   try {
     const result = await pool.query(consulta, values);
