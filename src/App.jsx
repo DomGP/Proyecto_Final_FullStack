@@ -17,11 +17,10 @@ import DetailPage from "./views/DetailPage";
 import CheckoutPage from "./views/CheckOutPage";
 import ConfirmationPage from "./views/ConfirmationPage";
 import MyPostsPage from "./views/MyPostsPage"
-
+import CreatePostPage from "./views/CreatePostPage";
 
 //CSS
 import "./App.css";
-
 
 function App() {
 
@@ -42,6 +41,7 @@ function App() {
             <Route path="/checkout" element={<CheckoutPage/>}/>
             <Route path="/confirmation" element={<ConfirmationPage/>}/>
             <Route path="/my-posts" element={<MyPostsPage/>}/>
+            <Route path="create-post" element={<CreatePostPage/>} />
           </Routes>
         </div>
         <Footer />
