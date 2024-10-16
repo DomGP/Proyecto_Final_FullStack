@@ -4,7 +4,7 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const MyPostsPage = () => {
-    const { posts } = useContext(PostContext);
+    const { posts, removePost } = useContext(PostContext);
 
     return (
         <Container className="container_detalle mt-5 p-4" style={{ backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
@@ -17,13 +17,22 @@ const MyPostsPage = () => {
                         {posts.length > 0 ? (
                             posts.map((post) => (
                                 <Card key={post.id} className="mb-3">
-                                    <Card.Img variant="top" src={post.img_url} />
                                     <Card.Body>
+                                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
+                                        <Card.Img variant="top" className='card-img' src={post.img_url} />
+                                    </div>
+                                        
                                         <Card.Title>{post.nombre}</Card.Title>
                                         <Card.Text>{post.descripcion}</Card.Text>
                                         <Card.Text>Categoría: {post.categoria}</Card.Text>
                                         <Card.Text>Precio: ${post.precio.toLocaleString("de-DE")}</Card.Text>
                                         <Card.Text>Plataforma: {post.plataforma}</Card.Text>
+                                        <Button 
+                                            variant="danger" 
+                                            onClick={() => removePost(post.id)} // Llamar a la función removePost
+                                        >
+                                            Eliminar
+                                        </Button>
                                     </Card.Body>
                                 </Card>
                             ))

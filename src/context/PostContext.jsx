@@ -18,8 +18,12 @@ const PostProvider = ({ children }) => {
     setPosts((prevPosts) => [...prevPosts, newPost]);
     };
 
+    const removePost = (id) => {
+      setPosts((prevPosts) => prevPosts.filter((post) => post.id !== id))
+    }
+
     return (
-        <PostContext.Provider value={{ posts, addPost }}>
+        <PostContext.Provider value={{ posts, addPost, removePost }}>
         {children}
         </PostContext.Provider>
   );
