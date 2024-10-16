@@ -12,14 +12,14 @@ const ProfilePage = () => {
         <Container className="container_detalle mt-5 p-4" style={{ backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
         <Row className="justify-content-center">
             <Col xs={12} md={10}>
-            <h1 className="text-center">Perfil de Usuario</h1>
+            <h1 className="text-center">Mi Perfil</h1>
             {user.token ? (
                 <>
-                <div className="mb-4" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
+                {/* <div className="mb-4" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
                     <h5 className="mb-3">Token de autenticación:</h5>
                     <p>{user.token}</p>
-                </div>
-
+                </div> */}
+                <Button className="d-block mx-auto mb-4">Mis publicaciones</Button>
                 <div className="mt-4" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
                     <h2 className="mb-4">Productos en el Carrito:</h2>
                     {carrito.length > 0 ? (
