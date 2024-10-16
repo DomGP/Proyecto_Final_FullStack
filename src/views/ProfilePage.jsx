@@ -19,7 +19,7 @@ const ProfilePage = () => {
                     <h5 className="mb-3">Token de autenticación:</h5>
                     <p>{user.token}</p>
                 </div> */}
-                <Button className="d-block mx-auto mb-4">Mis publicaciones</Button>
+                <Button as={Link} to="/my-posts" className="d-block mx-auto mb-4">Mis publicaciones</Button>
                 <div className="mt-4" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
                     <h2 className="mb-4">Productos en el Carrito:</h2>
                     {carrito.length > 0 ? (

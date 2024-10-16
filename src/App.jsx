@@ -12,13 +12,15 @@ import LoginPage from "./views/LoginPage";
 import CartPage from "./views/CartPage";
 import ProfilePage from "./views/ProfilePage";
 import ComodinPage from "./views/ComodinPage";
-
-//CSS
-import "./App.css";
 import GamesPage from "./views/GamesPage";
 import DetailPage from "./views/DetailPage";
 import CheckoutPage from "./views/CheckOutPage";
 import ConfirmationPage from "./views/ConfirmationPage";
+import MyPostsPage from "./views/MyPostsPage"
+
+
+//CSS
+import "./App.css";
 
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
             <Route path="/Products/:id" element={<DetailPage />} />
             <Route path="/checkout" element={<CheckoutPage/>}/>
             <Route path="/confirmation" element={<ConfirmationPage/>}/>
+            <Route path="/my-posts" element={<MyPostsPage/>}/>
           </Routes>
         </div>
         <Footer />
