@@ -6,7 +6,7 @@ const GameCarousel = ({ productos }) => {
 
     const groupedProductos = [];
   for (let i = 0; i < productos.length; i += 2) {
-    groupedProductos.push(productos.slice(i, i + 2));
+    groupedProductos.push(productos.slice(i, i + 3));
   }
 
   return (

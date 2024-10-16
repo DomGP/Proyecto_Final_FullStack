@@ -12,7 +12,7 @@ const CardGame = ({ showDetails = true, productos = [] }) => {
 
   return (
     <Container>
-      <Row className="justify-content-center mt-5">
+      <Row className="justify-content-center mt-1">
         {itemsAVisualizar.map((producto) => (
           <Col
             xs={12}

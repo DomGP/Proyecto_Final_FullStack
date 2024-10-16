@@ -1,7 +1,38 @@
-import React from 'react'
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 const RegisterForm = () => {
+  const { register } = useUser();
+  const  navigate  = useNavigate();
+  const [data, setData] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleInputChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { nombre, apellido, email, password } = data;
+
+    const response = await register(nombre, apellido, email, password);
+
+    if (response.success) {
+      setSuccess("Usuario registrado exitosamente");
+      setError("");
+      navigate("/login");
+    }
+  };
   return (
     <div>
       <div className="container my-5">
@@ -22,22 +53,26 @@ const RegisterForm = () => {
                           /> */}
                         </a>
                       </div>
-                      <h2 className="h4 text-center">Registrate con nosotros</h2>
+                      <h2 className="h4 text-center">
+                        Registrate con nosotros
+                      </h2>
                       <h3 className="fs-6 fw-normal text-secondary text-center m-0">
                         Ingresa tu información!
                       </h3>
                     </div>
                   </div>
                 </div>
-                <form action="#!">
+                <form onSubmit={handleSubmit}>
                   <div className="row gy-3 overflow-hidden">
                     <div className="col-12">
                       <div className="form-floating mb-3">
                         <input
                           type="text"
                           className="form-control"
-                          name="firstName"
-                          id="firstName"
+                          name="nombre"
+                          id="nombre"
+                          value={data.nombre}
+                          onChange={handleInputChange}
                           placeholder="First Name"
                           required
                         />
@@ -51,8 +86,10 @@ const RegisterForm = () => {
                         <input
                           type="text"
                           className="form-control"
-                          name="lastName"
-                          id="lastName"
+                          name="apellido"
+                          id="apellido"
+                          value={data.apellido}
+                          onChange={handleInputChange}
                           placeholder="First Name"
                           required
                         />
@@ -68,6 +105,8 @@ const RegisterForm = () => {
                           className="form-control"
                           name="email"
                           id="email"
+                          value={data.email}
+                          onChange={handleInputChange}
                           placeholder="name@example.com"
                           required
                         />
@@ -83,6 +122,8 @@ const RegisterForm = () => {
                           className="form-control"
                           name="password"
                           id="password"
+                          value={data.password}
+                          onChange={handleInputChange}
                           placeholder="Password"
                           required
                         />
@@ -110,11 +151,21 @@ const RegisterForm = () => {
                             href="#!"
                             className="link-primary text-decoration-none"
                           >
-                            terminos y condiciones
+                            términos y condiciones
                           </a>
                         </label>
                       </div>
                     </div>
+                    {error && (
+                      <div className="col-12">
+                        <div className="alert alert-danger">{error}</div>
+                      </div>
+                    )}
+                    {success && (
+                      <div className="col-12">
+                        <div className="alert alert-success">{success}</div>
+                      </div>
+                    )}
                     <div className="col-12">
                       <div className="d-grid">
                         <button
@@ -132,7 +183,10 @@ const RegisterForm = () => {
                     <hr className="mt-5 mb-4 border-secondary-subtle" />
                     <p className="m-0 text-secondary text-center">
                       ¿Ya tienes una cuenta con nosotros?{" "}
-                      <NavLink to="/login" className="link-primary text-decoration-none">
+                      <NavLink
+                        to="/login"
+                        className="link-primary text-decoration-none"
+                      >
                         Inicia sesión
                       </NavLink>
                     </p>
@@ -140,7 +194,9 @@ const RegisterForm = () => {
                 </div>
                 <div className="row">
                   <div className="col-12">
-                    <p className="mt-5 mb-5 text-center">O inicia sesión con:</p>
+                    <p className="mt-5 mb-5 text-center">
+                      O inicia sesión con:
+                    </p>
                     <div className="d-flex gap-2 gap-sm-3 justify-content-center">
                       <a
                         href="#!"
@@ -172,7 +228,10 @@ const RegisterForm = () => {
                           <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
                         </svg>
                       </a>
-                      <a href="#!" className="btn btn-lg btn-outline-info p-3 lh-1">
+                      <a
+                        href="#!"
+                        className="btn btn-lg btn-outline-info p-3 lh-1"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="28"
@@ -184,7 +243,10 @@ const RegisterForm = () => {
                           <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                         </svg>
                       </a>
-                      <a href="#!" className="btn btn-lg btn-outline-dark p-3 lh-1">
+                      <a
+                        href="#!"
+                        className="btn btn-lg btn-outline-dark p-3 lh-1"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="28"
@@ -206,7 +268,7 @@ const RegisterForm = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;

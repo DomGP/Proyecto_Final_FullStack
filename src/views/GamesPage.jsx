@@ -1,14 +1,13 @@
-import React from 'react'
-import CardGame from '../components/CardGame'
-import Button from "react-bootstrap/Button";
+import React from "react";
+import CardGame from "../components/CardGame";
 
 const GamesPage = () => {
   return (
-<>
-  <CardGame showDetails={false}/>
-  
-</>
-  )
-}
+    <>
+      <h2 className="text-center mt-2">Catálogo de Juegos</h2>
+      <CardGame showDetails={false} />
+    </>
+  );
+};
 
-export default GamesPage
+export default GamesPage;

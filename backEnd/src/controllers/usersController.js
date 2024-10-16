@@ -62,7 +62,9 @@ exports.loginUser = async (req, res) => {
       }
     );
 
-    res.status(200).json({ token });
+    res.status(200).json({ token,
+      nombre: user.nombre, apellido: user.apellido, email: user.email
+     });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
