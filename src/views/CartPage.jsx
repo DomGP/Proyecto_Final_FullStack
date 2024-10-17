@@ -27,7 +27,7 @@ const CartPage = () => {
     }
 
     try {
-      const responseOrder = await fetch("http://localhost:3000/api/create", {
+      const responseOrder = await fetch("https://level-footing-438615-u9.wn.r.appspot.com/api/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const CartPage = () => {
       }));
 
       const responseOrderDetails = await fetch(
-        "http://localhost:3000/api/agregar",
+        "https://level-footing-438615-u9.wn.r.appspot.com/api/agregar",
         {
           method: "POST",
           headers: {
