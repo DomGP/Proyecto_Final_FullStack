@@ -33,7 +33,7 @@ const addOrderDetail = async (order_id, productos) => {
     };
   } catch (error) {
     await pool.query("ROLLBACK");
-    console.error("Errror al agregar los productos a la orden:", error);
+    console.error("Error al agregar los productos a la orden:", error);
     throw new Error("Error al agregar los detalles de la orden");
   }
 };

@@ -5,11 +5,11 @@ export const PostContext = createContext();
 const PostProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
-  const {user} = useUser()
+  const { user } = useUser();
 
   useEffect(() => {
     const fetchPosts = async () => {
-      if (!user?.token) return
+      if (!user?.token) return;
       try {
         const response = await fetch(
           "https://level-footing-438615-u9.wn.r.appspot.com/api/getpost",
