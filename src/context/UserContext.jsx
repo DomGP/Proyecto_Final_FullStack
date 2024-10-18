@@ -39,7 +39,7 @@ export const UserProvider = ({ children }) => {
 
   const register = async (nombre, apellido, email, password) => {
     try {
-      const response = await fetch("https://level-footing-438615-u9.wn.r.appspot.com/api/", {
+      const response = await fetch("https://level-footing-438615-u9.wn.r.appspot.com/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
